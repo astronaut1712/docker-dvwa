@@ -25,6 +25,8 @@ COPY conf/php.ini /usr/local/etc/php/
 
 RUN git clone --depth 1 https://github.com/RandomStorm/DVWA /var/www/html
 
+RUN rm -f /var/www/html/php.ini
+
 RUN chown -R www-data:www-data /var/www/html
 
 COPY conf/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
